@@ -34,10 +34,10 @@ class App extends Component {
 
         console.log(this.state.searchQuery)
 
-        // const response = await fetch(
-            // `https://cors-anywhere.herokuapp.com/https://www.flickr.com/services/feeds/photos_public.gne?tags=${encodedSearchQuery}&format=json&nojsoncallback=1`);
+        const response = await fetch(
+            `https://cors-anywhere.herokuapp.com/https://www.flickr.com/services/feeds/photos_public.gne?tags=${encodedSearchQuery}&format=json&nojsoncallback=1`);
 
-        const response = await fetch(`https://www.flickr.com/services/feeds/photos_public.gne?tags=${encodedSearchQuery}&format=json&nojsoncallback=1`);
+        // const response = await fetch(`https://www.flickr.com/services/feeds/photos_public.gne?tags=${encodedSearchQuery}&format=json&nojsoncallback=1`);
 
         const data = await response.json();
 
