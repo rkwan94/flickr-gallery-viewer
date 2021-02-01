@@ -29,17 +29,15 @@ class App extends Component {
         this.queryFlickr();
     }
 
-    updateQuery(val) {
-        this.setState({
-            searchQuery: val,
-            loadingData: true, 
-        })
-    }
-
     async queryFlickr() {
-        const encodedSearchQuery = encodeURIComponent(this.state.searchQuery)
-        const response = await fetch(
-             `https://cors-anywhere.herokuapp.com/https://www.flickr.com/services/feeds/photos_public.gne?tags=${encodedSearchQuery}&format=json&nojsoncallback=1`);
+        const encodedSearchQuery = encodeURIComponent(this.state.searchQuery);
+
+        console.log(this.state.searchQuery)
+
+        // const response = await fetch(
+            // `https://cors-anywhere.herokuapp.com/https://www.flickr.com/services/feeds/photos_public.gne?tags=${encodedSearchQuery}&format=json&nojsoncallback=1`);
+
+        const response = await fetch(`https://www.flickr.com/services/feeds/photos_public.gne?tags=${encodedSearchQuery}&format=json&nojsoncallback=1`);
 
         const data = await response.json();
 
@@ -67,7 +65,6 @@ class App extends Component {
                 dateTaken={dateTime.format("ddd Do MMM YYYY, h:mm:ss a z")}
                 tags={image.tags.split(' ')}
                 title={image.title}
-                onTagClick={this.updateQuery}
             />;
         });
 
@@ -85,11 +82,12 @@ class App extends Component {
                     debounceTimeout={150}
                     onChange={ this.handleChange }
                     placeholder="Search here..."
+                    value={this.searchQuery}
                 />
             </div> 
 
             { 
-                this.state.searchQuery && this.state.searchQuery.length < 5 ?
+                this.state.searchQuery ?
                 <div className="tile-container">
                     {tiles}
                 </div> : <ErrorMessage />

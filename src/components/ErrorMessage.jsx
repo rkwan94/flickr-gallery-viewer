@@ -4,7 +4,7 @@ class ErrorMessage extends Component {
   render() {
     return (
       <div>
-        Shiiiietttt Flickr gone down!
+        No results yet! Please try searching for another term.
       </div>
     );
   }
