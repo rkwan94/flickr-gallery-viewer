@@ -1,0 +1,59 @@
+.app {
+    text-align: center;
+    padding: 48px;
+    height: 100%;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.app-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.app-header {
+    padding: 20px 0;
+}
+
+.app-intro {
+    font-size: large;
+}
+
+.input {
+    height: 32px;
+    width: calc(100% - 10px);
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0 0 0 8px;
+}
+
+.tile-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .tile-container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-gap: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .app-header>h2 {
+        font-size: 16px;
+    }
+    .tile-container {
+        display: flex;
+        flex-direction: column;
+    }
+}

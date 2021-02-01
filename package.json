@@ -1,0 +1,21 @@
+{
+    "name": "rangeme-flickr-test",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "moment": "^2.24.0",
+        "moment-timezone": "^0.5.27",
+        "react": "^16.12.0",
+        "react-debounce-input": "^3.2.2",
+        "react-dom": "^16.12.0",
+        "react-scripts": "0.9.x",
+        "styled-components": "^4.4.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject"
+    }
+}
